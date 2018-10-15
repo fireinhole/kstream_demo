@@ -1,0 +1,38 @@
+<html>
+  <header>
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="uikit/css/uikit.min.css" />
+    <script src="uikit/js/uikit.min.js"></script>
+    <script src="uikit/js/uikit-icons.min.js"></script>
+  </header>
+  <body>
+    <div uk-grid>
+        <div class="uk-width-1-4@s"></div>
+          <div class="uk-card uk-card-default uk-card-body uk-width-1-2@s">
+            <dl class="uk-description-list uk-description-list-divider">
+              @each(client in clients)
+                <dt><a href="/views/{{client.id}}" class="uk-link-text">{{client.first_name}} {{client.last_name}}</a></dt>
+                <dd>Age: {{client.age}}</dd>
+                <dd>Gender: {{client.gender}}</dd>
+              @else
+                <dt>No Clients</dt>     
+              @endeach
+            </dl>
+            <hr class="uk-divider-icon">
+
+            <div uk-grid>
+              <div class="uk-width-expand@m uk-width-1-2@s">
+                <a class="uk-button uk-button-default uk-width-1-1" href="/views/addclient">Add Client</a>
+              </div>
+              <div class="uk-width-expand@m uk-width-1-2@s">
+                <a class="uk-button uk-button-default uk-width-1-1" href="/views/transactions">Create Transactions</a>
+              </div>      
+            </div>
+          </div>
+        <div class="uk-width-1-4@s"></div>
+
+      </div>    
+  </body>
+</html>

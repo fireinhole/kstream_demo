@@ -1,0 +1,43 @@
+<html>
+  <header>
+      <title>Admin</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/uikit/css/uikit.min.css" />
+      <script src="/uikit/js/uikit.min.js"></script>
+      <script src="/uikit/js/uikit-icons.min.js"></script>
+  </header>
+  <body>
+        <div class="uk-child-width-expand@s" uk-grid>
+                <div></div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h1>{{client.first_name}} {{client.last_name}} <a href="/views/addclient/{{client.id}}" uk-icon="pencil"></a></h1>
+                    <br/>
+                    Age: {{client.age}}<br/>
+                    Gender: {{client.gender}}
+                    
+                    <hr class="uk-divider-icon">
+
+                    <dl class="uk-description-list uk-description-list-divider">
+                        @each(address in client.addresses)
+                            <dt>{{address.address}} <a href="/views/addaddress/{{client.id}}/{{address.id}}" uk-icon="pencil"></a></dt>
+                            <dd>{{address.city}} {{address.postalcode}} - {{address.city}}</dd>
+                        @else
+                            <dt>No Addresses</dt>   
+                        @endeach
+                    </dl>
+
+                    <hr class="uk-divider-icon">
+
+                    <div uk-grid>
+                            <div class="uk-width-1-2@s">
+                                    <a class="uk-button uk-button-default uk-width-1-1" href="/views/addaddress/{{client.id}}">Add Address</a>
+                            </div>
+                            <div class="uk-width-1-2@s">
+                                    <a class="uk-button uk-button-danger uk-width-1-1" onclick="window.open('/', '_self')">Done</a>
+                            </div>
+                    </div>
+                </div>
+                <div></div>
+        </div>
+  </body>

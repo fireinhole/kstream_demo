@@ -1,0 +1,48 @@
+<html>
+  <header>
+      <title>Admin</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/uikit/css/uikit.min.css" />
+      <script src="/uikit/js/uikit.min.js"></script>
+      <script src="/uikit/js/uikit-icons.min.js"></script>
+  </header>
+  <body>
+        <div class="uk-child-width-expand@s" uk-grid>
+                <div></div>
+                <div class="uk-card uk-card-default uk-card-body">
+                        <form class="uk-grid-small" action="/clients/{{clientid}}/addresses" method="POST">
+                                <input type="text" hidden name="id" value="{{address.id}}" />
+                                @if(address.isNew) 
+                                        <legend class="uk-legend">Add New Address</legend>
+                                @else
+                                        <legend class="uk-legend">Update Address</legend>
+                                @endif
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <input class="uk-input" type="text" placeholder="Address" name="address" value="{{address.address}}" />
+                                </div>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <input class="uk-input" type="text" placeholder="City" name="city" value="{{address.city}}" />
+                                </div>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <input class="uk-input" type="text" placeholder="Postal Code" name="postalcode" value="{{address.postalcode}}" />
+                                </div>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <input class="uk-input" type="text" placeholder="Country" name="country" value="{{address.country}}" />
+                                </div>
+                                <div class="uk-width-1-1@s">
+                                        <hr class="uk-divider-icon">
+                                </div>
+                                <div uk-grid>
+                                        <div class="uk-width-1-2@s">
+                                                <input class="uk-input" type="submit"/>
+                                        </div>
+                                        <div class="uk-width-1-2@s">
+                                                <a class="uk-button uk-button-danger uk-width-1-1" onclick="window.open('/views/{{clientid}}', '_self')">Cancel</a>
+                                        </div>
+                                </div>
+                        </form>
+                </div>
+                <div></div>
+        </div>
+  </body>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.confluent.examples</groupId>
+    <artifactId>kstream</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>http://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
+        <spring.web.client>5.0.4.RELEASE</spring.web.client>
+        <kafka.version>2.0.0</kafka.version>
+        <spring.kafka.version>2.1.6.RELEASE</spring.kafka.version>
+        <jackson.version>2.9.4</jackson.version>
+        <confluent.version>5.0.0</confluent.version>
+        <kafka.stream.version>2.0.0</kafka.stream.version>
+        <apache.avro.version>1.8.2</apache.avro.version>
+    </properties>
+
+    <modules>
+        <module>stream</module>
+    </modules>
+
+</project>

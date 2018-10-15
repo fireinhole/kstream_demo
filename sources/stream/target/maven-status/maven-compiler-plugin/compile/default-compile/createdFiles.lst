@@ -1,0 +1,14 @@
+io/confluent/examples/kstream/structuredjson/StreamService$Supplier.class
+io/confluent/examples/kstream/structuredjson/models/Address.class
+io/confluent/examples/kstream/structuredjson/processors/AddressProcessor.class
+io/confluent/examples/kstream/structuredjson/Application$1.class
+io/confluent/examples/kstream/structuredjson/StreamService.class
+io/confluent/examples/kstream/structuredjson/Application.class
+io/confluent/examples/kstream/structuredjson/models/Transaction.class
+io/confluent/examples/kstream/structuredjson/StreamService$1.class
+io/confluent/examples/kstream/structuredjson/models/Client.class
+io/confluent/examples/kstream/structuredjson/ApplicationProperties.class
+io/confluent/examples/kstream/structuredjson/serializer/JsonDeserializer.class
+io/confluent/examples/kstream/structuredjson/serializer/JsonSerializer.class
+io/confluent/examples/kstream/structuredjson/processors/ClientProcessor.class
+io/confluent/examples/kstream/structuredjson/processors/TransactionProcessor.class

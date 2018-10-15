@@ -1,0 +1,50 @@
+<html>
+  <header>
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/uikit/css/uikit.min.css" />
+    <script src="/uikit/js/uikit.min.js"></script>
+    <script src="/uikit/js/uikit-icons.min.js"></script>
+  </header>
+  <body>
+        <div class="uk-child-width-expand@s" uk-grid>
+                <div></div>
+                <div class="uk-card uk-card-default uk-card-body">
+                        <form class="uk-grid-small uk-form-stacked" uk-grid action="/transactions/" method="POST">
+                                <legend class="uk-legend">Create Transactions</legend>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <label class="uk-form-label" for="form-stacked-text">Number of Transactions</label>
+                                        <div class="uk-form-controls">
+                                            <input class="uk-input" type="number" value="100" name="count" />
+                                        </div>
+                                </div>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <label class="uk-form-label" for="form-stacked-text">Transaction types</label>
+                                        <div class="uk-form-controls">
+                                            <input class="uk-input" type="text" value="visa;mastercard;amex" name="types" />
+                                        </div>
+                                </div>
+                                <div class="uk-margin uk-width-1-1@s">
+                                        <label class="uk-form-label" for="form-stacked-text">Client</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select" name="client">
+                                                <option value="all">All</option>
+                                                @each(client in clients)
+                                                    <option value="{{client.id}}">{{client.first_name}} {{client.last_name}}</option>
+                                                @endeach
+                                            </select>
+                                        </div>
+                                </div>
+                                <div class="uk-width-1-2@s">
+                                    <input class="uk-input" type="submit"/>
+                                </div>
+                                <div class="uk-width-1-2@s">
+                                    <a class="uk-button uk-button-danger uk-width-1-1" onclick="window.open('/', '_self')">Cancel</a>
+                                </div>
+                        </form>
+                    </div>
+                <div></div>
+            </div>
+  </body>
+</html>
