@@ -14,7 +14,7 @@ services:
     - MYSQL_REPLICATION_MODE=master
     - MYSQL_REPLICATION_USER=repl_user
     - MYSQL_USER=my_user
-    - MYSQL_DATABASE=pocdb
+    - MYSQL_DATABASE=db
     - ALLOW_EMPTY_PASSWORD=yes
     - MYSQL_ROOT_PASSWORD=confluent
 
@@ -33,7 +33,7 @@ services:
     - MYSQL_REPLICATION_MODE=slave
     - MYSQL_REPLICATION_USER=repl_user
     - MYSQL_USER=my_user
-    - MYSQL_DATABASE=pocdb
+    - MYSQL_DATABASE=db
     - MYSQL_MASTER_HOST=db-master
     - MYSQL_MASTER_PORT_NUMBER=3306
     - ALLOW_EMPTY_PASSWORD=yes

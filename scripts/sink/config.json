@@ -2,7 +2,7 @@
   "name": "SinkConnector",
   "config": {
     "connector.class": "org.apache.kafka.connect.file.FileStreamSinkConnector",
-    "topics": "transactions",
+    "topics": "kstream.demo.transactions",
     "file": "/sink/data.json",
     "value.converter": "org.apache.kafka.connect.json.JsonConverter",
     "value.converter.schemas.enable":"false",

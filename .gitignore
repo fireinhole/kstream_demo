@@ -25,3 +25,11 @@ hs_err_pid*
 # KStream demo ignore
 filesink-output/*
 .DS_Store
+sources/.project
+sources/.settings/*
+*.ipr
+*.iws
+sources/stream/.classpath
+sources/stream/.project
+sources/stream/.settings/*
+*.iml

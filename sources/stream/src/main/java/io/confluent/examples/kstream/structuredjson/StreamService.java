@@ -79,13 +79,13 @@ public class StreamService {
 
         Topology builder = new Topology();
 
-        builder.addSource("clients", "cdc.pocdb.clients")
+        builder.addSource("clients", applicationProperties.getSource_clients_topic())
                 .addProcessor("clientProcessor", new Supplier<>(new ClientProcessor()), "clients")
 
-                .addSource("addresses", "cdc.pocdb.addresses")
+                .addSource("addresses", applicationProperties.getSource_addresses_topic())
                 .addProcessor("addressProcessor", new Supplier<>(new AddressProcessor()), "addresses")
 
-                .addSource("transactions", "cdc.pocdb.transactions")
+                .addSource("transactions", applicationProperties.getSource_transactions_topic())
                 .addProcessor("transactionsProcessor", new Supplier<>(new TransactionProcessor()), "transactions")
 
                 .addStateStore(Stores.keyValueStoreBuilder(
@@ -94,7 +94,7 @@ public class StreamService {
                         Serdes.serdeFrom(clientJsonSerializer, clientJsonDeserializer)
                 ), "clientProcessor", "addressProcessor", "transactionsProcessor")
 
-                .addSink("enrichedTransactions", "transactions", new StringSerializer(), transactionJsonSerializer, "transactionsProcessor");
+                .addSink("enrichedTransactions", applicationProperties.getTarget_transactions_topics(), new StringSerializer(), transactionJsonSerializer, "transactionsProcessor");
 
 
         LOGGER.info(builder.describe().toString());

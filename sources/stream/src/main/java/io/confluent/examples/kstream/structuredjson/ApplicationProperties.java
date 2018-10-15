@@ -12,6 +12,42 @@ public class ApplicationProperties {
     private String schema_registry;
     private String client_id;
     private String client_group_id;
+    private String source_clients_topic;
+    private String source_addresses_topic;
+    private String source_transactions_topic;
+    private String target_transactions_topics;
+
+    public String getSource_clients_topic() {
+        return source_clients_topic;
+    }
+
+    public void setSource_clients_topic(String source_clients_topic) {
+        this.source_clients_topic = source_clients_topic;
+    }
+
+    public String getSource_addresses_topic() {
+        return source_addresses_topic;
+    }
+
+    public void setSource_addresses_topic(String source_addresses_topic) {
+        this.source_addresses_topic = source_addresses_topic;
+    }
+
+    public String getSource_transactions_topic() {
+        return source_transactions_topic;
+    }
+
+    public void setSource_transactions_topic(String source_transactions_topic) {
+        this.source_transactions_topic = source_transactions_topic;
+    }
+
+    public String getTarget_transactions_topics() {
+        return target_transactions_topics;
+    }
+
+    public void setTarget_transactions_topics(String target_transactions_topics) {
+        this.target_transactions_topics = target_transactions_topics;
+    }
 
     public String getClient_id() {
         return client_id;

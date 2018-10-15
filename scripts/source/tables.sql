@@ -1,4 +1,4 @@
-use pocdb;
+use db;
 CREATE TABLE IF NOT EXISTS clients (
     id VARCHAR(255) NOT NULL PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,

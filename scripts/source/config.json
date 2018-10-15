@@ -3,9 +3,9 @@
   "config": {
     "database.hostname": "db-master",
     "database.port": "3306",
-    "database.server.name": "cdc",
+    "database.server.name": "kstream.demo",
     "database.history.kafka.bootstrap.servers": "broker:9092",
-    "database.history.kafka.topic": "cdc.history",
+    "database.history.kafka.topic": "kstream.demo.history",
     "database.user": "root",
     "connector.class": "io.debezium.connector.mysql.MySqlConnector",
     "database.password": "confluent",

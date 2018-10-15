@@ -6,9 +6,9 @@ docker exec -i db-master mysql -u root -pconfluent < tables.sql
 
 # Create required topics that matches 
 echo "Creating all source topics."
-docker exec -it broker /usr/bin/kafka-topics --create --topic cdc.pocdb.clients --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
-docker exec -it broker /usr/bin/kafka-topics --create --topic cdc.pocdb.addresses --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
-docker exec -it broker /usr/bin/kafka-topics --create --topic cdc.pocdb.transactions --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
+docker exec -it broker /usr/bin/kafka-topics --create --topic kstream.demo.db.clients --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
+docker exec -it broker /usr/bin/kafka-topics --create --topic kstream.demo.db.addresses --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
+docker exec -it broker /usr/bin/kafka-topics --create --topic kstream.demo.db.transactions --partitions 1 --replication-factor 1 --zookeeper zookeeper:2181
 
 # Create the CDC Sink connector
 echo "Creating CDC Sink connector."
