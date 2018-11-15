@@ -3,3 +3,5 @@
 # Create the kstream destination topic
 echo "Installing admin dependencies."
 cd ../../sources/admin && npm install
+
+echo Admin 
