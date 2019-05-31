@@ -42,10 +42,10 @@ MAX_WAIT=300
 CUR_WAIT=0
 echo "Waiting up to $MAX_WAIT seconds for Confluent Control Center to start"
 while [[ ! $(docker-compose logs control-center) =~ "Started NetworkTrafficServerConnector" ]]; do
-  sleep 10
-  CUR_WAIT=$(( CUR_WAIT+10 ))
+  sleep 3
+  CUR_WAIT=$(( CUR_WAIT+3 ))
   if [[ "$CUR_WAIT" -gt "$MAX_WAIT" ]]; then
-    echo "\nERROR: The logs in control-center container do not show 'Started NetworkTrafficServerConnector' after $MAX_WAIT seconds. Please troubleshoot with 'docker-compose ps' and 'docker-compose logs'.\n"
+    echo -e "\nERROR: The logs in control-center container do not show 'Started NetworkTrafficServerConnector' after $MAX_WAIT seconds. Please troubleshoot with 'docker-compose ps' and 'docker-compose logs'.\n"
     exit 1
   fi
 done

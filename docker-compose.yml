@@ -55,7 +55,7 @@ services:
       - ./sources/admin:/var/www
 
   zookeeper:
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:5.2.1
     hostname: zookeeper
     container_name: zookeeper
     depends_on:
@@ -67,7 +67,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   broker:
-    image: confluentinc/cp-enterprise-kafka:latest
+    image: confluentinc/cp-enterprise-kafka:5.2.1
     hostname: broker
     container_name: broker
     depends_on:
@@ -90,7 +90,7 @@ services:
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
 
   schema-registry:
-    image: confluentinc/cp-schema-registry:latest
+    image: confluentinc/cp-schema-registry:5.2.1
     hostname: schema-registry
     container_name: schema-registry
     depends_on:
@@ -103,8 +103,8 @@ services:
       SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
 
   connect:
-    # image: confluentinc/cp-enterprise-replicator:latest
-    image: confluentinc/cp-kafka-connect:latest
+    # image: confluentinc/cp-enterprise-replicator:5.2.1
+    image: confluentinc/cp-kafka-connect:5.2.1
     hostname: connect
     container_name: connect
     depends_on:
@@ -117,6 +117,8 @@ services:
       - "5005:5005"
     volumes:
       - mi2:/usr/share/java/monitoring-interceptors/
+      - ./connect-plugins/db2:/usr/share/java/db2
+      - ./connect-plugins/confluentinc-kafka-connect-cassandra:/usr/share/java/kafka-connect-cassandra
       - ./connect-plugins/debezium-debezium-connector-mongodb:/usr/share/java/debezium
       - ./filesink-output:/sink
     environment:
@@ -150,7 +152,7 @@ services:
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
       
   control-center:
-    image: confluentinc/cp-enterprise-control-center:latest
+    image: confluentinc/cp-enterprise-control-center:5.2.1
     hostname: control-center
     container_name: control-center
     depends_on:
